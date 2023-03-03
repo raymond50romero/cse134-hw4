@@ -122,12 +122,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   submitNewPost.addEventListener('click', (ev) => {
     ev.preventDefault();
     // get the needed information for new post
-    let newtitle = DOMPurify.sanitize(document.getElementById('title').value);
+    let newtitle = document.getElementById('title').value;
     let newdate = document.getElementById('date').value;
-    let newsummary = DOMPurify.sanitize(
-      document.getElementById('summary').value
-    );
-
+    let newsummary = document.getElementById('summary').value;
     // create new post object and add to our array
     let newPostEntry = {
       title: `${newtitle}`,
